@@ -1,0 +1,19 @@
+{
+  "workbench.colorTheme": "Dracula",
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "telemetry.telemetryLevel": "crash",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.iconTheme": "material-icon-theme",
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "git.confirmSync": false,
+  "git.ignoredRepositories": [
+    "/Users/jokhelpatrik/.vscode/extensions/stepsize.stepsize-0.61.0/resources/demo-repository"
+  ],
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true
+}
