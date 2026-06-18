@@ -7,6 +7,7 @@
 enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 
+start-at-login = true
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
@@ -84,3 +85,33 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     l = 'resize width +50'
     enter = 'mode main'
     esc = 'mode main'
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+check-further-callbacks = true
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+check-further-callbacks = true
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.moonlight-stream.Moonlight'
+check-further-callbacks = true
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
+check-further-callbacks = true
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyapp.TablePlus'
+check-further-callbacks = true
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+check-further-callbacks = true
+run = 'move-node-to-workspace 5'
