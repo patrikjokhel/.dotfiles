@@ -3,6 +3,10 @@
 # Get home directory or default to ~
 HOME_DIR="${HOME:-~}"
 
+# Absolute path to the dotfiles directory
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+echo "SCRIPT_DIR: $SCRIPT_DIR"
+
 # Set pipeline fail on error
 # - exit on error
 # - undefined variables are errors
@@ -151,7 +155,7 @@ if [ "$RUN_LINK_CONFIGS" == true ]; then
 
 	for cfg in "${CONFIG_LINKS[@]}"; do
 		echo "Linking in .config directory '$cfg'..."
-		run_cmd ln -s "./$cfg" "$HOME_DIR/.config/$cfg"
+		run_cmd ln -s "$SCRIPT_DIR/$cfg" "$HOME_DIR/.config/$cfg"
 	done
 
 	HOMEDIR_LINKS=(
@@ -163,7 +167,7 @@ if [ "$RUN_LINK_CONFIGS" == true ]; then
 	for link in "${HOMEDIR_LINKS[@]}"; do
 		filename="${link##*/}"
 		echo "Linking in home directory '$filename'..."
-		run_cmd ln -s "./$link" "$HOME_DIR/$link"
+		run_cmd ln -s "$SCRIPT_DIR/$link" "$HOME_DIR/$filename"
 	done
 
 fi
