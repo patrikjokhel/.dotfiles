@@ -124,8 +124,11 @@ if [ "$RUN_HOMEBREW" == true ]; then
 		telnet
 		watch
 		opencode
+		zoxide
+		nvm
 	)
 	BREW_CASKS=(
+		font-jetbrains-mono-nerd-font
 		aerospace
 		alacritty
 		bruno
