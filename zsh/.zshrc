@@ -8,6 +8,14 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Path Variables
+export TERM='xterm-256color'
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# Path to homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -16,6 +24,19 @@ export PATH="/Users/jokhelpatrik/.deno/bin:$PATH"
 
 # Path to VSCode
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Path to Golang
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
+
+# Path to Docker
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+
+# Path to PostgreSQL
+export PATH="/Applications/Postgres.app/Contents/Versions/9.5/bin:$PATH"
+
+# Cursor cli
+export PATH="$HOME/.local/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -85,8 +106,8 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-git
-zsh-autosuggestions
+    git
+    zsh-autosuggestions
 )
 
 eval "#(zoxide init zsh)"
@@ -125,5 +146,18 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source /Users/jokhelpatrik/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/jokhelpatrik/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/patrikjokhel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# pnpm
+export PNPM_HOME="/Users/patrikjokhel/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+#
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+# Add JBang to environment
+alias j!=jbang
+export PATH="$HOME/.jbang/bin:$PATH"
