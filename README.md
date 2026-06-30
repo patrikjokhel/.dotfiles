@@ -46,6 +46,7 @@ cd ~/.dotfiles
 Run everything:
 
 ```sh
+chmod +x ./setup-mac.sh
 ./setup-mac.sh
 ```
 
