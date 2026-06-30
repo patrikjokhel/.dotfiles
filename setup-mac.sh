@@ -47,10 +47,6 @@ else
 			RUN_OH_MY_ZSH_PLUGINS=true
 			shift
 			;;
-		--dry-run)
-			DRY_RUN=true
-			shift
-			;;
 		--help)
 			echo "Usage: $0 [--brew] [--link] [--oh-plugins] [--dry-run]"
 			exit 0
