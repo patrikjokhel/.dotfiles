@@ -221,7 +221,11 @@ return {
       html = {},
       cssls = {},
       jsonls = {},
-      --
+      buf_ls = {},
+
+      bashls = {},
+      shellcheck = {},
+      shfmt = {},
 
       lua_ls = {
         -- cmd = { ... },
